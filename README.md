@@ -1,90 +1,72 @@
-# Native Alert Wrapper for Adobe AIR
+# NativeAlertWrapper - Adobe Native Extension for Windows
 
 ## Overview
-
-The **Native Alert Wrapper** is an Adobe AIR extension designed to display native alert dialogs on Windows. This wrapper allows you to create customizable alert messages with user-defined button labels and titles, enhancing user experience in your AIR applications.
+NativeAlertWrapper is an Adobe Native Extension (ANE) designed for Adobe AIR applications on Windows. It provides a simple way to show native alert dialogs with customizable messages, button labels, and titles.
 
 ## Features
-
-- Display native alert dialogs using the Windows MessageBox.
-- Customizable parameters for alert messages, button labels, and titles.
-- Simple integration into existing Adobe AIR applications.
+- Display a native Windows alert with customizable message and button label.
+- Supports setting a custom title for the alert dialog.
 
 ## Requirements
-
-- Adobe AIR SDK version 51.1 or later.
-- Windows operating system.
+- Adobe AIR SDK 51.1 or later
+- Windows operating system
 
 ## Installation
 
-1. **Download the Project:**
-   Clone or download this repository to your local machine.
+1. **Download the NativeAlertWrapper.ane**: Ensure you have the latest version of the `.ane` file.
 
-   ```bash
-   git clone https://github.com/yourusername/NativeAlertProject.git
-   ```
+2. **Add the ANE to your Project**:
+   - Place the `NativeAlertWrapper.ane` file in your project directory.
+   - When compiling your AIR application, add the following parameter to the ADT command:
+     ```
+     -extdir path/to/your/ANE/directory
+     ```
+   - Alternatively, you can specify the ANE directly in your build configuration (e.g., `-use-network=false -use-code-signing=false`).
 
-2. **Add the Extension to Your Project:**
-   - Copy the compiled `.swc` file to your Adobe AIR project directory.
-   - Add the `.swc` file to your project settings in your IDE.
-
-3. **Include the Extension in Your Application:**
-   Add the following import statement to your ActionScript files:
-
-   ```actionscript
-   import com.milad.extensions.NativeAlertWrapper;
-   ```
+3. **Include the NativeAlertWrapper in Your Code**:
+   - Import the NativeAlertWrapper class in your ActionScript code:
+     ```actionscript
+     import com.milad.extensions.NativeAlertWrapper;
+     ```
 
 ## Usage
 
-### Initializing the Native Alert Wrapper
-
-To use the `NativeAlertWrapper`, you first need to create an instance of it:
+### Initializing the Wrapper
+To use the NativeAlertWrapper, you need to create an instance of it in your code:
 
 ```actionscript
 var alertWrapper:NativeAlertWrapper = new NativeAlertWrapper();
 ```
 
 ### Showing an Alert
-
-To show an alert, call the `showAlert` method with your desired message, button label, and title:
+You can display a native alert by calling the `showAlert` method:
 
 ```actionscript
-alertWrapper.showAlert("This is a sample alert message.", "OK", "Alert Title");
+alertWrapper.showAlert("This is a custom message!", "OK", "Custom Title");
 ```
 
-### Cleaning Up
-
-When you're done using the wrapper, ensure to call the `dispose` method to clean up resources:
+### Cleanup
+When you are done with the alert wrapper, dispose of it properly to free up resources:
 
 ```actionscript
 alertWrapper.dispose();
 ```
 
 ## Example
-
-Here’s a complete example demonstrating how to use the Native Alert Wrapper:
+Here’s a simple example of how to use the NativeAlertWrapper in an Adobe AIR application:
 
 ```actionscript
 import com.milad.extensions.NativeAlertWrapper;
 
 var alertWrapper:NativeAlertWrapper = new NativeAlertWrapper();
-alertWrapper.showAlert("This is an alert message.", "OK", "Alert Title");
-// Dispose the alert wrapper when done
-alertWrapper.dispose();
+alertWrapper.showAlert("Hello, World!", "OK", "Greetings");
 ```
 
 ## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ## Contributing
-
-Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
+Contributions are welcome! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
 
 ## Contact
-
-For any inquiries or issues, please contact:
-
-- [Your Name](mailto:your-email@example.com)
-- [GitHub Profile](https://github.com/yourusername)
+For any inquiries or support, please contact [Milad](mailto:miladtaban@gmail.com.com).
